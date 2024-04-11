@@ -36,7 +36,10 @@ npm install
 - Body As: {
     "email": "Email Address",
     "password": "Your Password"
+
 }
+- **User Data Update:** PUT `[http://localhost:8800/user/:id]`
+- **User Data Delete:** Delete `[http://localhost:8800/user/:id]`
 - **Task Creation:** POST `[http://localhost:8800/task]`
 - **Task Retrieval:** GET `[http://localhost:8800/task/:id]`
 - **Task Update:** PUT `[http://localhost:8800/task/:id]`
