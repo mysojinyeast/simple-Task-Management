@@ -27,8 +27,26 @@ npm install
 
  ## Usage
 
+
+## Usage
+
 1. **Open the app in your browser at [http://localhost:8800](http://localhost:8800).**
-2. **Create, edit, and manage your tasks effortlessly.**
+2. **Access the endpoints for API integration:**
+- **Task Creation:** POST `[[/api/tasks](http://localhost:8800/task)]`
+- **Task Retrieval:** GET `[http://localhost:8800/task/:id]`
+- **Task Update:** PUT `/api/tasks/:id`
+- **Task Deletion:** DELETE `/api/tasks/:id`
+
+3. **Create, edit, and manage your tasks effortlessly.**
+
+## Features
+
+- **Task Creation:** Add new tasks with due dates and descriptions.
+- **Task Prioritization:** Mark tasks as high, medium, or low priority.
+- **Task Completion:** Check off completed tasks.
+- **Task Filtering:** Filter tasks by status (completed, pending) or priority.
+- **User Authentication:** Secure login and registration system.
+
 
 ## Features
 
