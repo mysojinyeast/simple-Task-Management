@@ -1,5 +1,5 @@
 
-`# Simple Task Management
+# Simple Task Management
 
 Simple Task Management is a lightweight web application for managing tasks and to-do lists. Whether you’re organizing your personal tasks or collaborating with a team, this app provides an intuitive interface to keep track of your tasks efficiently.
 
