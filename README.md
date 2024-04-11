@@ -32,7 +32,7 @@ npm install
 
 1. **Open the app in your browser at [http://localhost:8800](http://localhost:8800).**
 2. **Access the endpoints for API integration:**
-- **Task Creation:** POST `[[/api/tasks](http://localhost:8800/task)]`
+- **Task Creation:** POST `[http://localhost:8800/task]`
 - **Task Retrieval:** GET `[http://localhost:8800/task/:id]`
 - **Task Update:** PUT `/api/tasks/:id`
 - **Task Deletion:** DELETE `/api/tasks/:id`
