@@ -12,13 +12,13 @@ cd simple-Task-Management
 
 
 
- 2. **Install dependencies:**` 
+2. **Install dependencies:**` 
 
 npm install
 
 
 
- 3. **Set up your environment variables (if needed).**
+3. **Set up your environment variables (if needed).**
 
 4. **Start the application:**` 
 
@@ -52,10 +52,3 @@ npm install
 - **Task Filtering:** Filter tasks by status (completed, pending) or priority.
 - **User Authentication:** Secure login and registration system.
 
-
-## Features
-
-- **Task Creation:** Add new tasks with due dates and descriptions.
-- **Task Prioritization:** Mark tasks as high, medium, or low priority.
-- **Task Completion:** Check off completed tasks.
-- **User Authentication:** Secure login and registration system.`
