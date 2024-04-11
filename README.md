@@ -32,10 +32,15 @@ npm install
 
 1. **Open the app in your browser at [http://localhost:8800](http://localhost:8800).**
 2. **Access the endpoints for API integration:**
+- **JWT Token:** POST `[http://localhost:8800/signup]`
+- Body As: {
+    "email": "Email Address",
+    "password": "Your Password"
+}
 - **Task Creation:** POST `[http://localhost:8800/task]`
 - **Task Retrieval:** GET `[http://localhost:8800/task/:id]`
-- **Task Update:** PUT `/api/tasks/:id`
-- **Task Deletion:** DELETE `/api/tasks/:id`
+- **Task Update:** PUT `[http://localhost:8800/task/:id]`
+- **Task Deletion:** DELETE `[http://localhost:8800/task/:id]`
 
 3. **Create, edit, and manage your tasks effortlessly.**
 
