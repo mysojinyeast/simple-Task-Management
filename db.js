@@ -3,21 +3,21 @@ const mysql = require('mysql2');
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: 's3cretPassword',
+    password: '',
 });
 
 db.connect(err => {
     if (err) throw err;
     console.log('Connected to MySQL server!');
 
-    db.query("CREATE DATABASE IF NOT EXISTS blogDb", (err, result) => {
+    db.query("CREATE DATABASE IF NOT EXISTS TodoDB", (err, result) => {
         if (err) throw err;
-        console.log("Database 'blogDb' created successfully!");
+        console.log("Database 'TodoDB' created successfully!");
     });
 
-    db.query("USE blogDb", (err, result) => {
+    db.query("USE TodoDB", (err, result) => {
         if (err) throw err;
-        console.log("Switched to database 'blogDb'");
+        console.log("Switched to database 'TodoDb'");
     });
 
     db.query(`CREATE TABLE IF NOT EXISTS users (
@@ -30,7 +30,7 @@ db.connect(err => {
     });
 
   
-    db.query(`CREATE TABLE IF NOT EXISTS blogs (
+    db.query(`CREATE TABLE IF NOT EXISTS Todo (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         content TEXT NOT NULL,
@@ -38,7 +38,7 @@ db.connect(err => {
         FOREIGN KEY (user_id) REFERENCES users(id)
     )`, (err, result) => {
         if (err) throw err;
-        console.log('Blogs table created successfully!');
+        console.log('Todo table created successfully!');
     });
 });
 

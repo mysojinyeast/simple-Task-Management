@@ -18,7 +18,7 @@ router.post('/', verifyToken, async (req, res) => {
     }
   
     try {
-      const [results] = await db.promise().query('INSERT INTO blogs (title, content, user_id) VALUES (?, ?, ?)', [title, content, userId]);
+      const [results] = await db.promise().query('INSERT INTO Todo (title, content, user_id) VALUES (?, ?, ?)', [title, content, userId]);
       res.json({ id: results.insertId });
   
     } catch (error) {
@@ -32,7 +32,7 @@ router.get('/:id', verifyToken, async (req, res) => {
   const postId = req.params.id;
 
   try {
-    const [results] = await db.promise().query('SELECT * FROM blogs WHERE id = ?', [postId]);
+    const [results] = await db.promise().query('SELECT * FROM Todo WHERE id = ?', [postId]);
 
     if (results.length === 0) {
       return res.status(404).json({ error: "Post not found" });
@@ -58,17 +58,17 @@ router.put('/:id', verifyToken, async (req, res) => {
     }
   
     try {
-      const [results] = await db.promise().query('UPDATE blogs SET title = ?, content = ? WHERE post_id = ? AND user_id = ?', [title, content, postId, userId]);
+      const [results] = await db.promise().query('UPDATE Todo SET title = ?, content = ? WHERE id = ? AND user_id = ?', [title, content, postId, userId]);
   
       if (results.affectedRows === 0) {
-        return res.status(403).json({ error: "You are not authorized to update this blog " });
+        return res.status(403).json({ error: "You are not authorized to update this Todo " });
       }
   
-      res.send("Blog updated successfully");
+      res.send("Todo updated successfully");
   
     } catch (error) {
-      console.error("Error updating Blog:", error);
-      res.status(500).json({ error: "Error updating blog" });
+      console.error("Error updating Todo:", error);
+      res.status(500).json({ error: "Error updating Todo" });
     }
   });
 
@@ -78,17 +78,17 @@ router.put('/:id', verifyToken, async (req, res) => {
 
   try {
   
-    const [results] = await db.promise().query('DELETE FROM blogs WHERE id = ? AND user_id = ?', [postId, userId]);
+    const [results] = await db.promise().query('DELETE FROM Todo WHERE id = ? AND user_id = ?', [postId, userId]);
 
     if (results.affectedRows === 0) {
-      return res.status(403).json({ error: "You are not authorized to delete this blog or the blog does not exist" });
+      return res.status(403).json({ error: "You are not authorized to delete this Todo or the Todo does not exist" });
     }
 
-    res.json({ message: "Blog deleted successfully" });
+    res.json({ message: "Todo deleted successfully" });
 
   } catch (error) {
-    console.error("Error deleting blog:", error);
-    res.status(500).json({ error: "Error deleting blog" });
+    console.error("Error deleting Todo:", error);
+    res.status(500).json({ error: "Error deleting Todo" });
   }
 });
 
